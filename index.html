@@ -71,35 +71,66 @@
         </style>
 </head>
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-    <div class="max-w-5xl mx-auto px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
         
         <div class="flex-shrink-0">
             <a href="#" class="group flex flex-col items-start">
-                <span class="text-3xl font-black tracking-tighter text-black" style="font-family: 'Noto Sans SC', sans-serif;">
-                    马师傅
-                </span>
-                <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-blue-600 leading-none mt-1">
-                    Ma Shifu
-                </span>
+                <span class="text-3xl font-black tracking-tighter text-black leading-none">马师傅</span>
+                <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-blue-600 leading-none mt-1">Ma Shifu</span>
             </a>
         </div>
         
         <div class="hidden lg:flex items-center space-x-6 text-[10px] font-extrabold uppercase tracking-widest text-gray-400">
-            <a href="#research" class="hover:text-black transition-colors">Research</a>
-            <a href="#education" class="hover:text-black transition-colors">Education</a>
-            <a href="#experience" class="hover:text-black transition-colors">Experience</a>
-            <a href="#conferences" class="hover:text-black transition-colors">Conferences</a>
-            <a href="#industry" class="hover:text-black transition-colors">Industry</a>
-            <a href="#leadership" class="hover:text-black transition-colors">Leadership</a>
-            <a href="#gallery" class="hover:text-black transition-colors">Gallery</a>
+            <a href="#research" class="hover:text-black transition-colors">
+                <span class="lang-en">Research</span><span class="lang-zh hidden">研究项目</span>
+            </a>
+            <a href="#education" class="hover:text-black transition-colors">
+                <span class="lang-en">Education</span><span class="lang-zh hidden">教育背景</span>
+            </a>
+            <a href="#experience" class="hover:text-black transition-colors">
+                <span class="lang-en">Experience</span><span class="lang-zh hidden">项目经验</span>
+            </a>
+            <a href="#conferences" class="hover:text-black transition-colors">
+                <span class="lang-en">Conferences</span><span class="lang-zh hidden">学术会议</span>
+            </a>
+            <a href="#industry" class="hover:text-black transition-colors">
+                <span class="lang-en">Industry</span><span class="lang-zh hidden">行业实践</span>
+            </a>
+            <a href="#leadership" class="hover:text-black transition-colors">
+                <span class="lang-en">Leadership</span><span class="lang-zh hidden">领导力</span>
+            </a>
+            <a href="#gallery" class="hover:text-black transition-colors">
+                <span class="lang-en">Gallery</span><span class="lang-zh hidden">相册</span>
+            </a>
             
-            <a href="mailto:mlanlokun@gmail.com" class="ml-4 px-4 py-2 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300">
-                Contact
+            <a href="mailto:mlanlokun@gmail.com" class="px-5 py-2 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300">
+                <span class="lang-en">Contact</span><span class="lang-zh hidden">联系方式</span>
             </a>
         </div>
+
+        <div class="flex justify-center my-8 no-print"> <a href="javascript:void(0)" onclick="downloadPDF()" 
+            class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span class="lang-en">Download PDF</span>
+                <span class="lang-zh hidden">保存页面为 PDF</span>
+            </a>
+        </div>
+
+            <div class="flex items-center border border-gray-200 rounded-lg p-0.5 bg-gray-50">
+                <button onclick="switchLang('en')" id="btn-en" class="px-2 py-1 text-[9px] font-black rounded transition-all bg-black text-white">EN</button>
+                <button onclick="switchLang('zh')" id="btn-zh" class="px-2 py-1 text-[9px] font-black rounded transition-all text-gray-400 hover:text-black">中文</button>
+            </div>
+        </div>
+        
         
         <div class="lg:hidden w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+
     </div>
+
+
+    
 </nav>
 <body class="bg-white">
 
@@ -107,34 +138,42 @@
 <header class="text-center mb-32">
     <img src="assets/img/malik.jpeg" alt="Malick Lanlokun" class="profile-img mx-auto mb-12 shadow-sm border-4 border-gray-50">
     
-    <h1 class="text-6xl font-black tracking-tighter mb-10">Hi. I’m Malick.</h1>
+    <h1 class="text-5xl font-extrabold tracking-tight mb-8">
+        <span class="lang-en">Hi. I’m Malick.</span>
+        <span class="lang-zh hidden">你好。我是马力克。</span>
+    </h1>    
     
     <div class="space-y-8 text-xl leading-relaxed text-gray-800 font-light">
         <div>
             <p class="mb-6">
-                I am a <span class="font-bold text-black underline decoration-blue-500 decoration-4 underline-offset-4">Research Engineer</span> 
-                working at the frontier of AI and Computational Neuroscience.
+                <span class="lang-en">I am a <span class="font-bold text-black underline decoration-blue-500 decoration-4 underline-offset-4">Research Engineer</span> working at the frontier of AI and Computational Neuroscience.</span>
+                <span class="lang-zh hidden">我是一名工作在人工智能与<span class="font-bold text-black underline decoration-blue-500 decoration-4 underline-offset-4">计算神经科学</span>前沿领域的研究工程师。</span>
             </p>
             
             <div class="flex flex-wrap justify-center gap-2 mt-6">
-                <span class="px-3 py-1 bg-black text-white text-[10px] font-bold uppercase tracking-widest rounded-sm border border-black hover:bg-white hover:text-black transition-all duration-300">Deep Learning</span>
-                <span class="px-3 py-1 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-sm border border-black hover:bg-black hover:text-white transition-all duration-300">Manifold Alignment</span>
-                <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-sm border border-blue-200">VR Simulation</span>
-                <span class="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold uppercase tracking-widest rounded-sm border border-gray-200">Neural Decoding</span>
+                <span class="px-3 py-1 bg-black text-white text-[10px] font-bold uppercase tracking-widest rounded-sm border border-black hover:bg-white hover:text-black transition-all duration-300">
+                    <span class="lang-en">Deep Learning</span><span class="lang-zh hidden">深度学习</span>
+                </span>
+                <span class="px-3 py-1 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-sm border border-black hover:bg-black hover:text-white transition-all duration-300">
+                    <span class="lang-en">Manifold Alignment</span><span class="lang-zh hidden">流形对齐</span>
+                </span>
+                <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-sm border border-blue-200">
+                    <span class="lang-en">VR Simulation</span><span class="lang-zh hidden">虚拟现实模拟</span>
+                </span>
+                <span class="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold uppercase tracking-widest rounded-sm border border-gray-200">
+                    <span class="lang-en">Neural Decoding</span><span class="lang-zh hidden">神经解码</span>
+                </span>
             </div>
         </div>
         
         <p>
-            Currently at <span class="italic font-medium text-gray-900">Nankai University</span>, 
-            I am building the <span class="font-bold text-blue-600">Universal Narrative Engine</span>. 
-            My work involves decoding latent neural states from the <span class="underline decoration-gray-200 underline-offset-8">Alice Dataset</span>.
+            <span class="lang-en">Currently at <span class="italic font-medium text-gray-900">Nankai University</span>, I am building the <span class="font-bold text-blue-600">Universal Narrative Engine</span>. My work involves decoding latent neural states from the <span class="underline decoration-gray-200 underline-offset-8">Alice Dataset</span>.</span>
+            <span class="lang-zh hidden">目前就读于<span class="italic font-medium text-gray-900">南开大学</span>，我正在开发<span class="font-bold text-blue-600">通用叙事引擎 (UNE)</span>。我的研究重点是解码 <span class="underline decoration-gray-200 underline-offset-8">Alice 数据集</span> 中的潜在大脑状态。</span>
         </p>
 
         <p class="text-base text-gray-500 max-w-2xl mx-auto pt-8 border-t border-gray-100 leading-loose">
-            Beyond the lab, find me on the <span class="text-black font-semibold">football</span> pitch, 
-            at the <span class="text-black font-semibold">billiards</span> table, or playing <span class="text-black font-semibold">ping pong</span>. 
-            I believe research is fueled by a spicy plate of <span class="italic text-gray-900">Gong Bao chicken</span> 
-            in Tianjin or the comforting taste of West African staples from home.
+            <span class="lang-en">Beyond the lab, find me on the <span class="text-black font-semibold">football</span> pitch, at the <span class="text-black font-semibold">billiards</span> table, or playing <span class="text-black font-semibold">ping pong</span>. I believe research is fueled by a spicy plate of <span class="italic text-gray-900">Gong Bao chicken</span> in Tianjin or the comforting taste of West African staples from home.</span>
+            <span class="lang-zh hidden">在实验室之外，你会发现我在<span class="text-black font-semibold">足球场</span>驰骋，或在<span class="text-black font-semibold">台球</span>桌和<span class="text-black font-semibold">乒乓球</span>台前竞技。我深信，研究的灵感源自天津地道的<span class="italic text-gray-900">宫保鸡丁</span>，亦或是家乡西非主食的亲切滋味。</span>
         </p>
     </div>
 
@@ -145,394 +184,766 @@
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
             </span>
             <span class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 group-hover:text-blue-600 transition-colors">
-                Currently Decoding Alice Dataset
+                <span class="lang-en">Currently Decoding Alice Dataset</span>
+                <span class="lang-zh hidden">正在解码 Alice 数据集</span>
             </span>
         </div>
     </div>
 </header>
-    <section id="research" class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Research & Projects</h2>
-        
-        <div class="space-y-16">
-            <div class="group">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                    <h3 class="text-2xl font-bold group-hover:text-blue-600 transition">The Universal Narrative Engine</h3>
-                    <span class="text-gray-400 font-medium tracking-tighter">Nankai University | Current</span>
-                </div>
-                <p class="text-gray-500 mb-6 italic text-sm">Thesis: Manifold Alignment and Zero-Shot Decoding of Latent Neural States</p>
-                <div class=" flex flex-col items-center justify-center -100 mb-6 px-8">                    <span class="text-xs uppercase  text-gray-400 font-bold mb-2">VR & Alice Data Simulator</span>
-                    <p class="text-xs text-gray-400 text-center leading-relaxed">Using Virtual Reality as an interface/simulator to visualize high-dimensional manifold alignment and interact with neural trajectories decoded from the Alice dataset.</p>
-                </div>
+<section id="research" class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Research & Projects</span>
+        <span class="lang-zh hidden">研究与项目</span>
+    </h2>
+    
+    <div class="space-y-16">
+        <div class="group">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                <h3 class="text-2xl font-bold group-hover:text-blue-600 transition">
+                    <span class="lang-en">The Universal Narrative Engine</span>
+                    <span class="lang-zh hidden">通用叙事引擎 (UNE)</span>
+                </h3>
+                <span class="text-gray-400 font-medium tracking-tighter">
+                    <span class="lang-en">Nankai University | Current</span>
+                    <span class="lang-zh hidden">南开大学 | 在读</span>
+                </span>
             </div>
-
-            <div class="group">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                    <h3 class="text-2xl font-bold group-hover:text-blue-600 transition">Diagnosis Classification Study</h3>
-                    <span class="text-gray-400 font-medium tracking-tighter">MRC Unit The Gambia at LSHTM</span>
-                </div>
-                <p class="text-gray-800 font-medium mb-3">Postgraduate Research Visitor</p>
-                <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">
-                    Analyzed clinical and laboratory datasets across West Africa to develop predictive classification models for Bacterial Meningitis diagnosis, bridging public health data with machine learning.
-                </p>
-            </div>
-
-            <div class="group">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                    <h3 class="text-2xl font-bold group-hover:text-blue-600 transition">Cortical Visual Processing</h3>
-                    <span class="text-gray-400 font-medium tracking-tighter">CMU Africa | Trend CAMINA</span>
-                </div>
-                <p class="text-gray-800 font-medium mb-3">Summer School Research Participant (July 2024)</p>
-                <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">
-                    Modeled the differential processing of visual information by cortical inhibitory and excitatory neurons, focusing on the computational foundations of cortical circuitry.
-                </p>
-            </div>
-
-            <div class="group">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                    <h3 class="text-2xl font-bold group-hover:text-blue-600 transition">Emerging Class Discovery in LLMs</h3>
-                    <span class="text-gray-400 font-medium tracking-tighter">IndabaX Gambia | 2025</span>
-                </div>
-                <p class="text-gray-800 font-medium mb-3">Research Participant</p>
-                <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">
-                    Investigated semantic co-occurrence patterns in large text corpora to improve representation learning and class discovery within Large Language Models (LLMs).
+            <p class="text-gray-500 mb-6 italic text-sm">
+                <span class="lang-en">Thesis: Manifold Alignment and Zero-Shot Decoding of Latent Neural States</span>
+                <span class="lang-zh hidden">论文方向：潜在大脑神经状态的流形对齐与零样本解码</span>
+            </p>
+            <div class="flex flex-col items-center justify-center -100 mb-6 px-8">
+                <span class="text-xs uppercase text-gray-400 font-bold mb-2">
+                    <span class="lang-en">VR & Alice Data Simulator</span>
+                    <span class="lang-zh hidden">虚拟现实与 Alice 数据模拟器</span>
+                </span>
+                <p class="text-xs text-gray-400 text-center leading-relaxed">
+                    <span class="lang-en">Using Virtual Reality as an interface/simulator to visualize high-dimensional manifold alignment and interact with neural trajectories decoded from the Alice dataset.</span>
+                    <span class="lang-zh hidden">利用虚拟现实技术作为交互界面和模拟器，可视化高维流形对齐过程，并与从 Alice 数据集中解码的神经轨迹进行实时交互。</span>
                 </p>
             </div>
         </div>
-    </section>
 
-    <section id="education" class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Education</h2>
-        
-        <div class="space-y-12">
+        <div class="group">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                <h3 class="text-2xl font-bold group-hover:text-blue-600 transition">
+                    <span class="lang-en">Diagnosis Classification Study</span>
+                    <span class="lang-zh hidden">诊断分类研究</span>
+                </h3>
+                <span class="text-gray-400 font-medium tracking-tighter">
+                    <span class="lang-en">MRC Unit The Gambia at LSHTM</span>
+                    <span class="lang-zh hidden">伦敦卫生与热带医学院 (LSHTM) 冈比亚医学研究委员会</span>
+                </span>
+            </div>
+            <p class="text-gray-800 font-medium mb-3">
+                <span class="lang-en">Postgraduate Research Visitor</span>
+                <span class="lang-zh hidden">研究生访问学者</span>
+            </p>
+            <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">
+                <span class="lang-en">Analyzed clinical and laboratory datasets across West Africa to develop predictive classification models for Bacterial Meningitis diagnosis, bridging public health data with machine learning.</span>
+                <span class="lang-zh hidden">分析了西非地区的临床和实验室数据集，开发用于细菌性脑膜炎诊断的预测分类模型，实现了公共卫生数据与机器学习的跨界融合。</span>
+            </p>
+        </div>
+
+        <div class="group">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                <h3 class="text-2xl font-bold group-hover:text-blue-600 transition">
+                    <span class="lang-en">Cortical Visual Processing</span>
+                    <span class="lang-zh hidden">皮层视觉处理建模</span>
+                </h3>
+                <span class="text-gray-400 font-medium tracking-tighter">
+                    <span class="lang-en">CMU Africa | Trend CAMINA</span>
+                    <span class="lang-zh hidden">卡内基梅隆大学非洲分校 | Trend CAMINA</span>
+                </span>
+            </div>
+            <p class="text-gray-800 font-medium mb-3">
+                <span class="lang-en">Summer School Research Participant (July 2024)</span>
+                <span class="lang-zh hidden">暑期学校研究成员 (2024年7月)</span>
+            </p>
+            <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">
+                <span class="lang-en">Modeled the differential processing of visual information by cortical inhibitory and excitatory neurons, focusing on the computational foundations of cortical circuitry.</span>
+                <span class="lang-zh hidden">模拟了皮层抑制性和兴奋性神经元对视觉信息的差异化处理，重点研究皮层回路的计算基础。</span>
+            </p>
+        </div>
+
+        <div class="group">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                <h3 class="text-2xl font-bold group-hover:text-blue-600 transition">
+                    <span class="lang-en">Emerging Class Discovery in LLMs</span>
+                    <span class="lang-zh hidden">大语言模型中的新兴类发现</span>
+                </h3>
+                <span class="text-gray-400 font-medium tracking-tighter">
+                    <span class="lang-en">IndabaX Gambia | 2025</span>
+                    <span class="lang-zh hidden">IndabaX 冈比亚 | 2025</span>
+                </span>
+            </div>
+            <p class="text-gray-800 font-medium mb-3">
+                <span class="lang-en">Research Participant</span>
+                <span class="lang-zh hidden">研究成员</span>
+            </p>
+            <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">
+                <span class="lang-en">Investigated semantic co-occurrence patterns in large text corpora to improve representation learning and class discovery within Large Language Models (LLMs).</span>
+                <span class="lang-zh hidden">通过研究大型文本语料库中的语义共现模式，优化大语言模型 (LLM) 中的表示学习和类别发现。</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Education</span>
+        <span class="lang-zh hidden">教育背景</span>
+    </h2>
+    
+    <div class="space-y-12">
+        <div>
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                <h3 class="text-2xl font-bold">
+                    <span class="lang-en">Nankai University</span>
+                    <span class="lang-zh hidden">南开大学</span>
+                </h3>
+                <span class="text-gray-400 font-medium tracking-tighter">
+                    <span class="lang-en">Tianjin, China | 2024 — 2026</span>
+                    <span class="lang-zh hidden">中国 天津 | 2024 — 2026</span>
+                </span>
+            </div>
+            <p class="text-lg text-gray-800 font-medium mb-2">
+                <span class="lang-en">Master of Science (M.Sc.) in Software Engineering</span>
+                <span class="lang-zh hidden">软件工程理学硕士</span>
+            </p>
+            <ul class="text-sm text-gray-500 space-y-2 leading-relaxed">
+                <li>
+                    <span class="font-bold text-gray-700 uppercase text-[10px] tracking-widest mr-2">
+                        <span class="lang-en">Focus</span><span class="lang-zh hidden">核心方向</span>
+                    </span> 
+                    <span class="lang-en">Machine Learning, Computer Vision, and Intelligent Systems</span>
+                    <span class="lang-zh hidden">机器学习、计算机视觉与智能系统</span>
+                </li>
+                <li>
+                    <span class="font-bold text-gray-700 uppercase text-[10px] tracking-widest mr-2">
+                        <span class="lang-en">Research</span><span class="lang-zh hidden">研究领域</span>
+                    </span> 
+                    <span class="lang-en">Computational neuroscience, neural encoding and decoding, vision–language modeling, and brain–machine interfaces</span>
+                    <span class="lang-zh hidden">计算神经科学、神经编码与解码、视觉-语言建模、脑机接口</span>
+                </li>
+                <li>
+                    <span class="font-bold text-gray-700 uppercase text-[10px] tracking-widest mr-2">
+                        <span class="lang-en">Thesis</span><span class="lang-zh hidden">硕士论文</span>
+                    </span> 
+                    <span class="lang-en">The Universal Narrative Engine: Manifold Alignment and Zero-Shot Decoding of Latent Neural States</span>
+                    <span class="lang-zh hidden">通用叙事引擎：潜在大脑神经状态的流形对齐与零样本解码</span>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                <h3 class="text-2xl font-bold">
+                    <span class="lang-en">University of The Gambia</span>
+                    <span class="lang-zh hidden">冈比亚大学</span>
+                </h3>
+                <span class="text-gray-400 font-medium tracking-tighter">
+                    <span class="lang-en">The Gambia | 2021</span>
+                    <span class="lang-zh hidden">冈比亚 | 2021</span>
+                </span>
+            </div>
+            <p class="text-lg text-gray-800 font-medium text-blue-600">
+                <span class="lang-en">Bachelor of Science (B.Sc.) in Computer Science</span>
+                <span class="lang-zh hidden">计算机科学理学学士</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Certifications</span>
+        <span class="lang-zh hidden">证书与资格</span>
+    </h2>
+    
+    <div class="divide-y divide-gray-200">
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
             <div>
-                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                    <h3 class="text-2xl font-bold">Nankai University</h3>
-                    <span class="text-gray-400 font-medium tracking-tighter">Tianjin, China | 2024 — 2026</span>
-                </div>
-                <p class="text-lg text-gray-800 font-medium mb-2">Master of Science (M.Sc.) in Software Engineering</p>
-                <ul class="text-sm text-gray-500 space-y-2 leading-relaxed">
-                    <li><span class="font-bold text-gray-700 uppercase text-[10px] tracking-widest mr-2">Focus</span> Machine Learning, Computer Vision, and Intelligent Systems</li>
-                    <li><span class="font-bold text-gray-700 uppercase text-[10px] tracking-widest mr-2">Research</span> Computational neuroscience, neural encoding and decoding, vision–language modeling, and brain–machine interfaces</li>
-                    <li><span class="font-bold text-gray-700 uppercase text-[10px] tracking-widest mr-2">Thesis</span> The Universal Narrative Engine: Manifold Alignment and Zero-Shot Decoding of Latent Neural States</li>
+                <h4 class="font-bold text-lg">
+                    <span class="lang-en">Computational Neuroscience Course</span>
+                    <span class="lang-zh hidden">计算神经科学课程认证</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Neuromatch Academy</span>
+                    <span class="lang-zh hidden">Neuromatch 在线科学院</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 italic mt-1 md:mt-0">
+                <span class="lang-en">November 2025</span>
+                <span class="lang-zh hidden">2025年11月</span>
+            </p>
+        </div>
+
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+                <h4 class="font-bold text-lg text-blue-600">
+                    <span class="lang-en">Trend CAMINA Summer School</span>
+                    <span class="lang-zh hidden">Trend CAMINA 暑期学校</span>
+                </h4>
+                <p class="text-gray-700 font-medium">
+                    <span class="lang-en">Carnegie Mellon University Africa</span>
+                    <span class="lang-zh hidden">卡内基梅隆大学（非洲校区）</span>
+                </p>
+                <p class="text-sm text-gray-500 mt-1 italic">
+                    <span class="lang-en">Project: Differential Processing of Visual Information by Cortical Inhibitory and Excitatory Neurons</span>
+                    <span class="lang-zh hidden">项目：皮层抑制性和兴奋性神经元对视觉信息的差异化处理</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 italic mt-1 md:mt-0 whitespace-nowrap">
+                <span class="lang-en">July 2024</span>
+                <span class="lang-zh hidden">2024年7月</span>
+            </p>
+        </div>
+
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <h4 class="font-bold text-lg">
+                    <span class="lang-en">Software Engineering Certificate</span>
+                    <span class="lang-zh hidden">软件工程专业证书</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">ALX Africa</span>
+                    <span class="lang-zh hidden">ALX 非洲（精英科技人才培训）</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 italic mt-1 md:mt-0">
+                <span class="lang-en">Oct 2022 — 2023</span>
+                <span class="lang-zh hidden">2022年10月 — 2023年</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Skills & Competences</span>
+        <span class="lang-zh hidden">技能与专业能力</span>
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-widest mb-6 text-blue-600">
+                <span class="lang-en">Research & Strategy</span><span class="lang-zh hidden">研究与战略</span>
+            </h3>
+            <ul class="space-y-3 text-gray-700 text-sm">
+                <li class="flex items-start">
+                    <span class="mr-2 text-black">•</span>
+                    <span class="lang-en">Neural data analysis & encoding/decoding</span>
+                    <span class="lang-zh hidden">神经数据分析与编码/解码</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-black">•</span>
+                    <span class="lang-en">Computational modeling of brain activity</span>
+                    <span class="lang-zh hidden">大脑活动计算建模</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-black">•</span>
+                    <span class="lang-en">Multimodal representation analysis</span>
+                    <span class="lang-zh hidden">多模态表征分析</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-black">•</span>
+                    <span class="lang-en">Open source systems research</span>
+                    <span class="lang-zh hidden">开源系统研究</span>
+                </li>
+            </ul>
+            
+            <h3 class="text-sm font-bold uppercase tracking-widest mt-10 mb-6 text-blue-600">
+                <span class="lang-en">Personal Strengths</span><span class="lang-zh hidden">个人优势</span>
+            </h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+                <span class="lang-en">Leadership, Community building (AI Gambia Network), Project management, and Cross-functional team collaboration.</span>
+                <span class="lang-zh hidden">领导力、社区建设（冈比亚人工智能网络）、项目管理以及跨职能团队协作。</span>
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-widest mb-6 text-blue-600">
+                <span class="lang-en">Software & Tools</span><span class="lang-zh hidden">软件与工具</span>
+            </h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">PyTorch</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">TensorFlow</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">MNE-Python</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Brian2</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">AllenSDK</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Python / Kotlin / Flutter</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Docker / Linux</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">
+                    <span class="lang-en">Signal Processing</span><span class="lang-zh hidden">信号处理</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Teaching</span>
+        <span class="lang-zh hidden">教学经验</span>
+    </h2>
+    
+    <div class="space-y-8">
+        <div>
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                <h3 class="text-xl font-bold">
+                    <span class="lang-en">Teaching Assistant</span>
+                    <span class="lang-zh hidden">助教 (TA)</span>
+                </h3>
+                <span class="text-gray-400 font-medium tracking-tighter">
+                    <span class="lang-en">University of The Gambia</span>
+                    <span class="lang-zh hidden">冈比亚大学</span>
+                </span>
+            </div>
+            <p class="text-md text-gray-800 font-medium mb-3 italic">
+                <span class="lang-en">Human-Computer Interaction & Intelligent Systems</span>
+                <span class="lang-zh hidden">人机交互与智能系统</span>
+            </p>
+            <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">
+                <span class="lang-en">Supported lectures and practical sessions, guiding students through hands-on projects in system design and intelligent computing. Facilitated the transition from theoretical concepts to functional programming tasks.</span>
+                <span class="lang-zh hidden">辅助教学与实践课，指导学生完成系统设计和智能计算方面的实操项目。协助学生将理论概念转化为实际的编程任务。</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="conferences" class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Conferences & Workshops</span>
+        <span class="lang-zh hidden">学术会议与研讨会</span>
+    </h2>
+    
+    <div class="divide-y divide-gray-200">
+
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <h4 class="font-bold text-lg text-blue-600">
+                    <span class="lang-en">WIC Asia-Pacific Summit</span>
+                    <span class="lang-zh hidden">世界互联网大会 (WIC) 亚太高峰论坛</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Digital Academy Alumni Representative</span>
+                    <span class="lang-zh hidden">数字研修院校友代表</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">
+            <span class="lang-en">Hong Kong, China | April 2026</span>
+            <span class="lang-zh hidden">中国 香港 | 2026年4月</span>
+            </p>
+        </div>
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <h4 class="font-bold text-lg text-blue-600">
+                    <span class="lang-en">Deep Learning Indaba</span>
+                    <span class="lang-zh hidden">Deep Learning Indaba (非洲深度学习峰会)</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Poster Presenter & Attendee</span>
+                    <span class="lang-zh hidden">海报展示者与参会者</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">
+                <span class="lang-en">Kigali, Rwanda | 2025</span>
+                <span class="lang-zh hidden">卢旺达 基加利 | 2025</span>
+            </p>
+        </div>
+
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <h4 class="font-bold text-lg">
+                    <span class="lang-en">OpenKylin Global Developer Conference</span>
+                    <span class="lang-zh hidden">开放麒麟 (OpenKylin) 全球开发者大会</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Community New Star Award Winner</span>
+                    <span class="lang-zh hidden">社区新星奖获得者</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">
+                <span class="lang-en">Beijing, China | 2025</span>
+                <span class="lang-zh hidden">中国 北京 | 2025</span>
+            </p>
+        </div>
+
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <h4 class="font-bold text-lg">
+                    <span class="lang-en">China Open Source Conference (COSC)</span>
+                    <span class="lang-zh hidden">中国开源年会 (COSCon)</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Participant & Researcher</span>
+                    <span class="lang-zh hidden">参会者与研究员</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">
+                <span class="lang-en">Beijing, China | 2025</span>
+                <span class="lang-zh hidden">中国 北京 | 2025</span>
+            </p>
+        </div>
+
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <h4 class="font-bold text-lg">
+                    <span class="lang-en">World Internet Conference</span>
+                    <span class="lang-zh hidden">世界互联网大会 (WIC)</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Global Elite Training Program</span>
+                    <span class="lang-zh hidden">全球青年精英计划 (WICGEY)</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">
+                <span class="lang-en">Wuzhen, China | 2024</span>
+                <span class="lang-zh hidden">中国 乌镇 | 2024</span>
+            </p>
+        </div>
+
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <h4 class="font-bold text-lg text-blue-600">
+                    <span class="lang-en">Open Source Community Africa (OSCA) Summit</span>
+                    <span class="lang-zh hidden">非洲开源社区 (OSCA) 峰会</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Chapter Lead Representative</span>
+                    <span class="lang-zh hidden">分会负责人代表</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">
+                <span class="lang-en">Lagos, Nigeria | 2024</span>
+                <span class="lang-zh hidden">尼日利亚 拉各斯 | 2024</span>
+            </p>
+        </div>
+
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <h4 class="font-bold text-lg">
+                    <span class="lang-en">ETHIXPERT Conference on Research Ethics</span>
+                    <span class="lang-zh hidden">ETHIXPERT 研究伦理会议</span>
+                </h4>
+                <p class="text-gray-700 font-light text-sm italic">
+                    <span class="lang-en">UTG in collaboration with MRC Unit The Gambia at LSHTM</span>
+                    <span class="lang-zh hidden">冈比亚大学与伦敦卫生与热带医学院 (LSHTM) 冈比亚研究委员会合作</span>
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">
+                <span class="lang-en">The Gambia</span>
+                <span class="lang-zh hidden">冈比亚</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="industry" class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Industrial Experience</span>
+        <span class="lang-zh hidden">行业经验</span>
+    </h2>
+    
+    <div class="divide-y divide-gray-200">
+        <div class="py-8 flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+            <div class="max-w-xl">
+                <h4 class="font-bold text-lg text-blue-600 uppercase tracking-tight">
+                    <span class="lang-en">Software Engineer</span>
+                    <span class="lang-zh hidden">软件工程师</span>
+                </h4>
+                <p class="text-gray-900 font-medium mb-3">
+                    <span class="lang-en">University of The Gambia</span>
+                    <span class="lang-zh hidden">冈比亚大学</span>
+                </p>
+                <ul class="text-sm text-gray-500 space-y-2 leading-relaxed list-disc ml-4">
+                    <li>
+                        <span class="lang-en">Designed and deployed digital platforms for academic management and research support, modernizing institutional data workflows.</span>
+                        <span class="lang-zh hidden">设计并部署了用于学术管理和研究支持的数字化平台，实现了院校数据工作流的现代化。</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Collaborated on the university’s digital transformation strategy to improve institutional efficiency and transparency.</span>
+                        <span class="lang-zh hidden">参与制定大学数字化转型战略，提升了院校的运营效率与透明度。</span>
+                    </li>
                 </ul>
             </div>
-
-            <div>
-                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                    <h3 class="text-2xl font-bold">University of The Gambia</h3>
-                    <span class="text-gray-400 font-medium tracking-tighter">The Gambia | 2021</span>
-                </div>
-                <p class="text-lg text-gray-800 font-medium text-blue-600">Bachelor of Science (B.Sc.) in Computer Science</p>
-            </div>
+            <p class="text-sm text-gray-400 font-bold whitespace-nowrap">
+                <span class="lang-en">2023 — Present</span>
+                <span class="lang-zh hidden">2023年 — 至今</span>
+            </p>
         </div>
-    </section>
 
-    <section id="experience" class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Certifications</h2>
-        
-        <div class="divide-y divide-gray-200">
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div>
-                    <h4 class="font-bold text-lg">Computational Neuroscience Course</h4>
-                    <p class="text-gray-700">Neuromatch Academy</p>
-                </div>
-                <p class="text-sm text-gray-400 italic mt-1 md:mt-0">November 2025</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-start">
-                <div>
-                    <h4 class="font-bold text-lg text-blue-600">Trend CAMINA Summer School</h4>
-                    <p class="text-gray-700 font-medium">Carnegie Mellon University Africa</p>
-                    <p class="text-sm text-gray-500 mt-1 italic">Project: Differential Processing of Visual Information by Cortical Inhibitory and Excitatory Neurons</p>
-                </div>
-                <p class="text-sm text-gray-400 italic mt-1 md:mt-0 whitespace-nowrap">July 2024</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div>
-                    <h4 class="font-bold text-lg">Software Engineering Certificate</h4>
-                    <p class="text-gray-700">ALX Africa</p>
-                </div>
-                <p class="text-sm text-gray-400 italic mt-1 md:mt-0">Oct 2022 — 2023</p>
-            </div>
-        </div>
-    </section>
-    <section class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Skills & Competences</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-sm font-bold uppercase tracking-widest mb-6 text-blue-600">Research & Strategy</h3>
-                <ul class="space-y-3 text-gray-700 text-sm">
-                    <li class="flex items-start"><span class="mr-2 text-black">•</span> Neural data analysis & encoding/decoding</li>
-                    <li class="flex items-start"><span class="mr-2 text-black">•</span> Computational modeling of brain activity</li>
-                    <li class="flex items-start"><span class="mr-2 text-black">•</span> Multimodal representation analysis</li>
-                    <li class="flex items-start"><span class="mr-2 text-black">•</span> Open source systems research</li>
+        <div class="py-8 flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+            <div class="max-w-xl">
+                <h4 class="font-bold text-lg uppercase tracking-tight">
+                    <span class="lang-en">Software Engineer</span>
+                    <span class="lang-zh hidden">软件工程师</span>
+                </h4>
+                <p class="text-gray-900 font-medium mb-3">2M CORP</p>
+                <ul class="text-sm text-gray-500 space-y-2 leading-relaxed list-disc ml-4">
+                    <li>
+                        <span class="lang-en">Developed tailored health information systems for the Government of Niue, Kaduna State, and The Gambia.</span>
+                        <span class="lang-zh hidden">为纽埃政府、尼日利亚卡杜纳州及冈比亚政府开发定制化的医疗健康信息系统。</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Implemented scalable, secure public data management platforms aligned with international public sector digital standards.</span>
+                        <span class="lang-zh hidden">实施了符合国际公共部门数字化标准的、具备可扩展性且安全的公共数据管理平台。</span>
+                    </li>
                 </ul>
-                
-                <h3 class="text-sm font-bold uppercase tracking-widest mt-10 mb-6 text-blue-600">Personal Strengths</h3>
+            </div>
+            <p class="text-sm text-gray-400 font-bold whitespace-nowrap">
+                <span class="lang-en">2022 — 2023</span>
+                <span class="lang-zh hidden">2022年 — 2023年</span>
+            </p>
+        </div>
+
+        <div class="py-8 flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+            <div class="max-w-xl">
+                <h4 class="font-bold text-lg uppercase tracking-tight">
+                    <span class="lang-en">Junior Software Engineer Intern</span>
+                    <span class="lang-zh hidden">初级软件工程师（实习）</span>
+                </h4>
+                <p class="text-gray-900 font-medium mb-3">
+                    <span class="lang-en">University of The Gambia</span>
+                    <span class="lang-zh hidden">冈比亚大学</span>
+                </p>
                 <p class="text-sm text-gray-500 leading-relaxed">
-                    Leadership, Community building (AI Gambia Network), Project management, and Cross-functional team collaboration.
+                    <span class="lang-en">Contributed to the development of internal university applications and data portals, supporting the early-stage digitization of student records.</span>
+                    <span class="lang-zh hidden">参与开发大学内部应用程序及数据门户，支持学生档案数字化初期的建设工作。</span>
                 </p>
             </div>
-
-            <div>
-                <h3 class="text-sm font-bold uppercase tracking-widest mb-6 text-blue-600">Software & Tools</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">PyTorch</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">TensorFlow</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">MNE-Python</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Brian2</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">AllenSDK</span>
-                    
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Python</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Kotlin</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Flutter</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Django</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Linux</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Docker</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">LaTeX</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-[11px] font-bold uppercase tracking-tighter rounded-sm">Signal Processing</span>
-                </div>
-            </div>
+            <p class="text-sm text-gray-400 font-bold whitespace-nowrap">
+                <span class="lang-en">2021 — 2022</span>
+                <span class="lang-zh hidden">2021年 — 2022年</span>
+            </p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Teaching</h2>
-        
-        <div class="space-y-8">
-            <div>
-                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                    <h3 class="text-xl font-bold">Teaching Assistant</h3>
-                    <span class="text-gray-400 font-medium tracking-tighter">University of The Gambia</span>
-                </div>
-                <p class="text-md text-gray-800 font-medium mb-3 italic">Human-Computer Interaction & Intelligent Systems</p>
-                <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">
-                    Supported lectures and practical sessions, guiding students through hands-on projects in system design and intelligent computing. Facilitated the transition from theoretical concepts to functional programming tasks.
+<section id="awards" class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Awards & Honors</span>
+        <span class="lang-zh hidden">荣誉与奖项</span>
+    </h2>
+    
+    <div class="divide-y divide-gray-200">
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div class="max-w-xl">
+                <h4 class="font-bold text-lg text-blue-600 uppercase tracking-tight">
+                    <span class="lang-en">MOFCOM Scholarship Award</span>
+                    <span class="lang-zh hidden">商务部奖学金 (MOFCOM)</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Chinese Government Scholarship for Postgraduate Excellence at Nankai University.</span>
+                    <span class="lang-zh hidden">中国政府优秀研究生奖学金，支持在南开大学的深造研究。</span>
                 </p>
             </div>
+            <p class="text-sm text-gray-400 font-bold">
+                <span class="lang-en">China</span><span class="lang-zh hidden">中国</span>
+            </p>
         </div>
-    </section>
 
-    <section id="conferences" class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Conferences & Workshops</h2>
-        
-        <div class="divide-y divide-gray-200">
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div>
-                    <h4 class="font-bold text-lg text-blue-600">Deep Learning Indaba</h4>
-                    <p class="text-gray-700">Poster Presenter & Attendee</p>
-                </div>
-                <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">Kigali, Rwanda | 2025</p>
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div class="max-w-xl">
+                <h4 class="font-bold text-lg uppercase tracking-tight">
+                    <span class="lang-en">3rd Place: Large Model Reasoning Engine</span>
+                    <span class="lang-zh hidden">大模型推理引擎挑战赛：全球第三名</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Inference Optimization Competition — Ranked 3rd out of 200+ global teams.</span>
+                    <span class="lang-zh hidden">推理优化竞赛 —— 在全球200多支参赛队伍中荣获第三名。</span>
+                </p>
             </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div>
-                    <h4 class="font-bold text-lg">OpenKylin Global Developer Conference</h4>
-                    <p class="text-gray-700">Community New Star Award Winner</p>
-                </div>
-                <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">Beijing, China | 2025</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div>
-                    <h4 class="font-bold text-lg">China Open Source Conference (COSC)</h4>
-                    <p class="text-gray-700">Participant & Researcher</p>
-                </div>
-                <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">Beijing, China | 2025</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div>
-                    <h4 class="font-bold text-lg">World Internet Conference</h4>
-                    <p class="text-gray-700">Global Elite Training Program</p>
-                </div>
-                <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">Wuzhen, China | 2024</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div>
-                    <h4 class="font-bold text-lg text-blue-600">Open Source Community Africa (OSCA) Summit</h4>
-                    <p class="text-gray-700">Chapter Lead Representative</p>
-                </div>
-                <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">Lagos, Nigeria | 2024</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div>
-                    <h4 class="font-bold text-lg">ETHIXPERT Conference on Research Ethics</h4>
-                    <p class="text-gray-700 font-light text-sm italic">UTG in collaboration with MRC Unit The Gambia at LSHTM</p>
-                </div>
-                <p class="text-sm text-gray-400 font-medium mt-1 md:mt-0">The Gambia</p>
-            </div>
+            <p class="text-sm text-gray-400 font-bold whitespace-nowrap">
+                <span class="lang-en">OpenKylin Community</span><span class="lang-zh hidden">开放麒麟 (OpenKylin) 社区</span>
+            </p>
         </div>
-    </section>
 
-    <section id="industry" class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Industrial Experience</h2>
-        
-        <div class="divide-y divide-gray-200">
-            <div class="py-8 flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                <div class="max-w-xl">
-                    <h4 class="font-bold text-lg text-blue-600 uppercase tracking-tight">Software Engineer</h4>
-                    <p class="text-gray-900 font-medium mb-3">University of The Gambia</p>
-                    <ul class="text-sm text-gray-500 space-y-2 leading-relaxed list-disc ml-4">
-                        <li>Designed and deployed digital platforms for academic management and research support, modernizing institutional data workflows.</li>
-                        <li>Collaborated on the university’s digital transformation strategy to improve institutional efficiency and transparency.</li>
-                    </ul>
-                </div>
-                <p class="text-sm text-gray-400 font-bold whitespace-nowrap">2023 — Present</p>
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div class="max-w-xl">
+                <h4 class="font-bold text-lg text-blue-600 uppercase tracking-tight">
+                    <span class="lang-en">3rd Place: Data Science for Health Ideathon Africa</span>
+                    <span class="lang-zh hidden">非洲健康数据科学创新大赛：第三名</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Google Sponsored — Developed <span class="italic font-medium">MKUNGA</span>, an AI-driven Swahili antenatal triage system.</span>
+                    <span class="lang-zh hidden">谷歌 (Google) 赞助 —— 开发了 <span class="italic font-medium">MKUNGA</span>，一套基于人工智能的斯瓦希里语产前分诊系统。</span>
+                </p>
             </div>
-
-            <div class="py-8 flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                <div class="max-w-xl">
-                    <h4 class="font-bold text-lg uppercase tracking-tight">Software Engineer</h4>
-                    <p class="text-gray-900 font-medium mb-3">2M CORP</p>
-                    <ul class="text-sm text-gray-500 space-y-2 leading-relaxed list-disc ml-4">
-                        <li>Developed tailored health information systems for the Government of Niue, Kaduna State, and The Gambia.</li>
-                        <li>Implemented scalable, secure public data management platforms aligned with international public sector digital standards.</li>
-                    </ul>
-                </div>
-                <p class="text-sm text-gray-400 font-bold whitespace-nowrap">2022 — 2023</p>
-            </div>
-
-            <div class="py-8 flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                <div class="max-w-xl">
-                    <h4 class="font-bold text-lg uppercase tracking-tight">Junior Software Engineer Intern</h4>
-                    <p class="text-gray-900 font-medium mb-3">University of The Gambia</p>
-                    <p class="text-sm text-gray-500 leading-relaxed">
-                        Contributed to the development of internal university applications and data portals, supporting the early-stage digitization of student records.
-                    </p>
-                </div>
-                <p class="text-sm text-gray-400 font-bold whitespace-nowrap">2021 — 2022</p>
-            </div>
+            <p class="text-sm text-gray-400 font-bold">
+                <span class="lang-en">Pan-Africa</span><span class="lang-zh hidden">全非洲</span>
+            </p>
         </div>
-    </section>
 
-    <section id="awards" class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Awards & Honors</h2>
-        
-        <div class="divide-y divide-gray-200">
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div class="max-w-xl">
-                    <h4 class="font-bold text-lg text-blue-600 uppercase tracking-tight">MOFCOM Scholarship Award</h4>
-                    <p class="text-gray-700">Chinese Government Scholarship for Postgraduate Excellence at Nankai University.</p>
-                </div>
-                <p class="text-sm text-gray-400 font-bold">China</p>
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div class="max-w-xl">
+                <h4 class="font-bold text-lg uppercase tracking-tight">
+                    <span class="lang-en">New Star of the Year Award</span>
+                    <span class="lang-zh hidden">年度社区新星奖</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Recognized at the OpenKylin Global Developer Conference for community contributions.</span>
+                    <span class="lang-zh hidden">在开放麒麟全球开发者大会上因对社区的卓越贡献获得表彰。</span>
+                </p>
             </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div class="max-w-xl">
-                    <h4 class="font-bold text-lg uppercase tracking-tight">3rd Place: Large Model Reasoning Engine</h4>
-                    <p class="text-gray-700">Inference Optimization Competition — Ranked 3rd out of 200+ global teams.</p>
-                </div>
-                <p class="text-sm text-gray-400 font-bold whitespace-nowrap">OpenKylin Community</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div class="max-w-xl">
-                    <h4 class="font-bold text-lg text-blue-600 uppercase tracking-tight">3rd Place: Data Science for Health Ideathon Africa</h4>
-                    <p class="text-gray-700">Google Sponsored — Developed <span class="italic font-medium">MKUNGA</span>, an AI-driven Swahili antenatal triage system.</p>
-                </div>
-                <p class="text-sm text-gray-400 font-bold">Pan-Africa</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div class="max-w-xl">
-                    <h4 class="font-bold text-lg uppercase tracking-tight">New Star of the Year Award</h4>
-                    <p class="text-gray-700">Recognized at the OpenKylin Global Developer Conference for community contributions.</p>
-                </div>
-                <p class="text-sm text-gray-400 font-bold">Beijing</p>
-            </div>
-
-            <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
-                <div class="max-w-xl">
-                    <h4 class="font-bold text-lg uppercase tracking-tight">Poster Presenter Award</h4>
-                    <p class="text-gray-700">Deep Learning Indaba — Recognizing excellence in research presentation.</p>
-                </div>
-                <p class="text-sm text-gray-400 font-bold">Kigali, Rwanda</p>
-            </div>
+            <p class="text-sm text-gray-400 font-bold">
+                <span class="lang-en">Beijing</span><span class="lang-zh hidden">北京</span>
+            </p>
         </div>
-    </section>
 
-    <section id="leadership" class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Leadership</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-sm font-bold uppercase tracking-widest mb-4 text-blue-600">Founding Member & Coordinator</h3>
-                <p class="font-bold">Artificial Intelligence Gambia Network</p>
-                <p class="text-sm text-gray-500 mt-2">Coordinating AI learning programs and research-driven discussions to build the local ecosystem for data science and machine learning.</p>
+        <div class="py-6 flex flex-col md:flex-row md:justify-between md:items-center">
+            <div class="max-w-xl">
+                <h4 class="font-bold text-lg uppercase tracking-tight">
+                    <span class="lang-en">Poster Presenter Award</span>
+                    <span class="lang-zh hidden">优秀海报展示奖</span>
+                </h4>
+                <p class="text-gray-700">
+                    <span class="lang-en">Deep Learning Indaba — Recognizing excellence in research presentation.</span>
+                    <span class="lang-zh hidden">深度学习 Indaba 峰会 —— 表彰卓越的研究展示能力。</span>
+                </p>
             </div>
-            <div>
-                <h3 class="text-sm font-bold uppercase tracking-widest mb-4 text-blue-600">Chapter Lead</h3>
-                <p class="font-bold">Open Source Community Africa (OSCA)</p>
-                <p class="text-sm text-gray-500 mt-2">Guiding contributors on Git workflows and open-source participation at the Brusubi Chapter.</p>
-            </div>
+            <p class="text-sm text-gray-400 font-bold">
+                <span class="lang-en">Kigali, Rwanda</span><span class="lang-zh hidden">卢旺达 基加利</span>
+            </p>
         </div>
-    </section>
+    </div>
+</section>
 
+<section id="leadership" class="mb-24">
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Leadership</span>
+        <span class="lang-zh hidden">领导力与社群贡献</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-widest mb-4 text-blue-600">
+                <span class="lang-en">Founding Member & Coordinator</span>
+                <span class="lang-zh hidden">创始成员与协调员</span>
+            </h3>
+            <p class="font-bold">
+                <span class="lang-en">Artificial Intelligence Gambia Network</span>
+                <span class="lang-zh hidden">冈比亚人工智能网络 (AI Gambia Network)</span>
+            </p>
+            <p class="text-sm text-gray-500 mt-2">
+                <span class="lang-en">Coordinating AI learning programs and research-driven discussions to build the local ecosystem for data science and machine learning.</span>
+                <span class="lang-zh hidden">协调人工智能学习项目和以研究为导向的学术讨论，旨在构建本地数据科学与机器学习的生态系统。</span>
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-widest mb-4 text-blue-600">
+                <span class="lang-en">Chapter Lead</span>
+                <span class="lang-zh hidden">分会负责人</span>
+            </h3>
+            <p class="font-bold">
+                <span class="lang-en">Open Source Community Africa (OSCA)</span>
+                <span class="lang-zh hidden">非洲开源社区 (OSCA)</span>
+            </p>
+            <p class="text-sm text-gray-500 mt-2">
+                <span class="lang-en">Guiding contributors on Git workflows and open-source participation at the Brusubi Chapter.</span>
+                <span class="lang-zh hidden">在 Brusubi 分会指导贡献者掌握 Git 工作流并积极参与开源项目。</span>
+            </p>
+        </div>
+    </div>
+</section>
 <section id="gallery" class="mb-24">
-        <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">Gallery & Events</h2>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
-                <img src="assets/img/indaba.jpeg" alt="Deep Learning Indaba" class="object-cover w-full h-full">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p class="text-[10px] text-white font-bold uppercase tracking-widest">Indaba 2025</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
-                <img src="assets/img/tencent.jpeg" alt="Tencent Headquarters" class="object-cover w-full h-full">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p class="text-[10px] text-white font-bold uppercase tracking-widest">Tencent HQ</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
-                <img src="assets/img/openkylincomp.jpeg" alt="OpenKylin Competition" class="object-cover w-full h-full">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p class="text-[10px] text-white font-bold uppercase tracking-widest">OpenKylin 3rd Place</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
-                <img src="assets/img/poster.jpeg" alt="Research Poster" class="object-cover w-full h-full">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p class="text-[10px] text-white font-bold uppercase tracking-widest">Poster Session</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
-                <img src="assets/img/dli.jpeg" alt="DLI Rwanda" class="object-cover w-full h-full">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p class="text-[10px] text-white font-bold uppercase tracking-widest">DLI Rwanda</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
-                <img src="assets/img/agro.jpeg" alt="Agro Presentation" class="object-cover w-full h-full">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p class="text-[10px] text-white font-bold uppercase tracking-widest">Agro Tech Keynote</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
-                <img src="assets/img/coscon.jpeg" alt="COSCON Beijing" class="object-cover w-full h-full">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p class="text-[10px] text-white font-bold uppercase tracking-widest">COSCON Beijing</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
-                <img src="assets/img/devcon.jpeg" alt="Developer Conference" class="object-cover w-full h-full">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p class="text-[10px] text-white font-bold uppercase tracking-widest">Global DevCon</p>
-                </div>
+    <h2 class="text-2xl font-extrabold uppercase tracking-widest border-b-2 border-black pb-2 mb-12">
+        <span class="lang-en">Gallery & Events</span>
+        <span class="lang-zh hidden">活动掠影</span>
+    </h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/indaba.jpeg" alt="Deep Learning Indaba" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">Indaba 2025</span>
+                    <span class="lang-zh hidden">2025年 非洲深度学习峰会</span>
+                </p>
             </div>
         </div>
-    </section>
+
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/tencent.jpeg" alt="Tencent Headquarters" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">Tencent HQ</span>
+                    <span class="lang-zh hidden">腾讯总部</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/openkylincomp.jpeg" alt="OpenKylin Competition" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">OpenKylin 3rd Place</span>
+                    <span class="lang-zh hidden">开放麒麟大赛三等奖</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/poster.jpeg" alt="Research Poster" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">Poster Session</span>
+                    <span class="lang-zh hidden">海报展示环节</span>
+                </p>
+            </div>
+        </div>
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/asia-pacific.jpeg" alt="Research Poster" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">WIC ASIA Pacific Summit</span>
+                    <span class="lang-zh hidden">世界互联网大会 (WIC) 亚太高峰论坛</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/dli.jpeg" alt="DLI Rwanda" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">DLI Rwanda</span>
+                    <span class="lang-zh hidden">DLI 卢旺达</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/agro.jpeg" alt="Agro Presentation" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">Agro Tech Keynote</span>
+                    <span class="lang-zh hidden">农业科技主旨演讲</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/coscon.jpeg" alt="COSCON Beijing" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">COSCON Beijing</span>
+                    <span class="lang-zh hidden">中国开源年会 北京站</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+            <img src="assets/img/devcon.jpeg" alt="Developer Conference" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest text-center px-2">
+                    <span class="lang-en">Global DevCon</span>
+                    <span class="lang-zh hidden">全球开发者大会</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
 
 
@@ -542,7 +953,10 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7" />
         </svg>
-        <span class="text-[8px] font-black uppercase tracking-widest">TOP</span>
+        <span class="text-[8px] font-black uppercase tracking-widest">
+            <span class="lang-en">TOP</span>
+            <span class="lang-zh hidden">回到顶部</span>
+        </span>   
     </div>
 </button>
 
@@ -572,29 +986,39 @@
                     马师傅 · MA SHIFU
                 </span>
                 <p class="text-gray-400 text-sm mt-8 max-w-sm leading-relaxed font-light">
-                    Research Engineer developing the <span class="text-white font-medium">Universal Narrative Engine</span>. 
-                    Specializing in Manifold Alignment and neural decoding from the Alice Dataset.
+                    <span class="lang-en">Research Engineer developing the <span class="text-white font-medium">Universal Narrative Engine</span>. Specializing in Manifold Alignment and neural decoding from the Alice Dataset.</span>
+                    <span class="lang-zh hidden">致力于开发 <span class="text-white font-medium">通用叙事引擎 (UNE)</span> 的研究工程师。专注于流形对齐以及 Alice 数据集的神经解码研究。</span>
                 </p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-10">
                 
                 <div class="flex flex-col space-y-4 text-left">
-                    <span class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Research</span>
+                    <span class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">
+                        <span class="lang-en">Research</span><span class="lang-zh hidden">学术科研</span>
+                    </span>
                     <a href="https://scholar.google.com/citations?hl=en&user=c1tC_jYAAAAJ" target="_blank" class="text-[12px] font-bold hover:text-blue-500 transition-colors uppercase tracking-widest">Google Scholar</a>
                     <a href="https://github.com/Lanlokun" target="_blank" class="text-[12px] font-bold hover:text-blue-500 transition-colors uppercase tracking-widest">GitHub</a>
                 </div>
 
                 <div class="flex flex-col space-y-4 text-left">
-                    <span class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Social</span>
+                    <span class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">
+                        <span class="lang-en">Social</span><span class="lang-zh hidden">社交媒体</span>
+                    </span>
                     <a href="https://www.linkedin.com/in/malik-kolawole-lanlokun-96a9081b8/" target="_blank" class="text-[12px] font-bold hover:text-blue-500 transition-colors uppercase tracking-widest">LinkedIn</a>
                     <a href="https://x.com/maliklanlokun_" target="_blank" class="text-[12px] font-bold hover:text-blue-500 transition-colors uppercase tracking-widest">Twitter / X</a>
                 </div>
 
                 <div class="hidden md:flex flex-col space-y-4 text-left">
-                    <span class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Explore</span>
-                    <a href="#research" class="text-[12px] font-bold hover:text-blue-500 transition-colors uppercase tracking-widest">Research</a>
-                    <a href="#gallery" class="text-[12px] font-bold hover:text-blue-500 transition-colors uppercase tracking-widest">Gallery</a>
+                    <span class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">
+                        <span class="lang-en">Explore</span><span class="lang-zh hidden">快速导航</span>
+                    </span>
+                    <a href="#research" class="text-[12px] font-bold hover:text-blue-500 transition-colors uppercase tracking-widest">
+                        <span class="lang-en">Research</span><span class="lang-zh hidden">研究项目</span>
+                    </a>
+                    <a href="#gallery" class="text-[12px] font-bold hover:text-blue-500 transition-colors uppercase tracking-widest">
+                        <span class="lang-en">Gallery</span><span class="lang-zh hidden">活动掠影</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -603,13 +1027,14 @@
 
         <div class="flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center space-x-6 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-                <span>© 2026 ALL RIGHTS RESERVED</span>
+                <span>© 2026 <span class="lang-en">ALL RIGHTS RESERVED</span><span class="lang-zh hidden">版权所有</span></span>
                 <span class="hidden md:block w-1 h-1 bg-gray-800 rounded-full"></span>
-                <span>TIANJIN, CHINA</span>
+                <span><span class="lang-en">TIANJIN, CHINA</span><span class="lang-zh hidden">中国 · 天津</span></span>
             </div>
 
             <a href="#" class="group flex items-center space-x-3 text-[11px] font-black tracking-widest text-gray-400 hover:text-white transition-all">
-                <span>BACK TO TOP</span>
+                <span class="lang-en">BACK TO TOP</span>
+                <span class="lang-zh hidden">回到顶部</span>
                 <div class="p-2 border border-gray-800 group-hover:border-white transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transform group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7" />
@@ -620,3 +1045,39 @@
     </div>
 </footer>
 </html>
+
+
+<script>
+    function switchLang(lang) {
+        const enElements = document.querySelectorAll('.lang-en');
+        const zhElements = document.querySelectorAll('.lang-zh');
+        const btnEn = document.getElementById('btn-en');
+        const btnZh = document.getElementById('btn-zh');
+
+        if (lang === 'zh') {
+            enElements.forEach(el => el.classList.add('hidden'));
+            zhElements.forEach(el => el.classList.remove('hidden'));
+            // Update button styles
+            btnZh.classList.add('bg-black', 'text-white');
+            btnZh.classList.remove('text-gray-400');
+            btnEn.classList.remove('bg-black', 'text-white');
+            btnEn.classList.add('text-gray-400');
+        } else {
+            zhElements.forEach(el => el.classList.add('hidden'));
+            enElements.forEach(el => el.classList.remove('hidden'));
+            // Update button styles
+            btnEn.classList.add('bg-black', 'text-white');
+            btnEn.classList.remove('text-gray-400');
+            btnZh.classList.remove('bg-black', 'text-white');
+            btnZh.classList.add('text-gray-400');
+        }
+    }
+
+    function downloadPDF() {
+    // 1. Temporarily show all language spans so the PDF is bilingual 
+    // (Or skip this if you only want the currently selected language)
+    
+    // 2. Trigger the browser print dialog
+    window.print();
+}
+</script>
